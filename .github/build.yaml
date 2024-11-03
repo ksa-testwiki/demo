@@ -1,0 +1,34 @@
+name: Build Vue
+on: [push]
+permissions:
+  actions: write
+  attestations: write
+  checks: write
+  contents: write
+  deployments: write
+  id-token: write
+  issues: write
+  discussions: write
+  packages: write
+  pages: write
+  pull-requests: write
+  repository-projects: write
+  security-events: write
+  statuses: write
+
+jobs:
+  build_vue:
+    
+    
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: alphaleadership/VuePagesAction@1.0.16
+      with:
+        username: 'ksa-testwiki'
+        reponame: 'demo'
+        token: ${{ secrets.GITHUB_TOKEN }} # Leave this line unchanged
+    
+   
